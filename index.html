@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="コーチングスクール COACHING-L の、ブラウザで使える無料ツールの一覧です。">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#02172f" media="(prefers-color-scheme: dark)">
+  <title>ツール | COACHING-L</title>
+  <!-- このページと 404.html は、どの URL で表示されても読み込めるように、/ から始まるパスで書く -->
+  <link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="COACHING-L">
+  <!-- ?v= は style.css を変えるたびに1つ上げる（ブラウザに古いファイルが残って、表示が崩れるのを防ぐ） -->
+  <link rel="stylesheet" href="/style.css?v=1">
+</head>
+<body>
+  <div class="app">
+    <!-- ロゴ＋COACHING-L（各ツールと同じ組み方） -->
+    <header class="brand-header">
+      <img class="brand-logo" src="/icons/logo-144.png" width="52" height="52" alt="">
+      <div>
+        <p class="brand-name">COACHING-L</p>
+        <h1 class="app-title">ツール</h1>
+      </div>
+    </header>
+    <p class="intro"><span class="phrase">スマホやパソコンのブラウザで、</span><span class="phrase">すぐに使えるツールです。</span><span class="phrase">登録やインストールは要りません。</span></p>
+
+    <main>
+      <!-- ツールを足すときは、<li> を1つ増やす（リンク先は /リポジトリ名/） -->
+      <ul class="tool-list">
+        <li>
+          <a class="tool-card" href="/the-wheel-of-life/">
+            <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M12 12 12 6.5 15.2 8.8Z" fill="currentColor"/>
+            </svg>
+            <span class="tool-body">
+              <span class="tool-name">人生の輪</span>
+              <span class="tool-desc">8つの領域の「いま」と「理想」の点数から、自分の人生の輪を描いて、画像で保存できるワークシートです。</span>
+            </span>
+            <span class="tool-arrow" aria-hidden="true">›</span>
+          </a>
+        </li>
+        <li>
+          <a class="tool-card" href="/reflection-cards/">
+            <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="7" y="3.5" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(8 13 11.5)"/>
+              <rect x="4.5" y="4.5" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M8.6 10.2a2 2 0 1 1 2.6 1.9c-.5.2-.7.6-.7 1.1v.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="10.5" cy="16.2" r=".9" fill="currentColor"/>
+            </svg>
+            <span class="tool-body">
+              <span class="tool-name">内省の問いカード</span>
+              <span class="tool-desc">人生の輪の8つの領域から、内省のための問いをランダムに引けるカードです。</span>
+            </span>
+            <span class="tool-arrow" aria-hidden="true">›</span>
+          </a>
+        </li>
+        <li>
+          <a class="tool-card" href="/pomodoro/">
+            <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M10 2.8h4M12 2.8V5M12 13V8.6M12 13l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <span class="tool-body">
+              <span class="tool-name">ポモドーロタイマー</span>
+              <span class="tool-desc">集中するための道具であると同時に、自分の集中パターンに「気づく」ための道具です。</span>
+            </span>
+            <span class="tool-arrow" aria-hidden="true">›</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="privacy-note"><span class="phrase">どのツールも、入力した内容は</span><span class="phrase">お使いの端末の中にだけ保存され、</span><span class="phrase">外部には送信されません。</span></p>
+    </main>
+
+    <footer class="app-footer">
+      <p class="footer-brand">COACHING-L</p>
+      <p class="footer-note">コーチングスクール</p>
+    </footer>
+  </div>
+</body>
+</html>

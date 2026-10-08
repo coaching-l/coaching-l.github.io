@@ -1,0 +1,308 @@
+/* COACHING-L ツールのトップページ
+   スマホ優先。外部フォントは使わず、端末のフォントで表示します。 */
+
+/* 色・ロゴの組み方は、各ツール（人生の輪・問いカード・ポモドーロタイマー）とそろえています。
+   紺 #042143 / 濃い紺 #02172f / 金 #c09e5c / 濃い金 #98783d / 背景 #f7f8fa / 文字 #293746 */
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --text: #293746;
+  --text-muted: #5f6d7c;
+  --heading: #042143;
+  --accent: #042143; /* アイコン・矢印・ボタン */
+  --accent-soft: #eaeef3; /* アイコンの下地 */
+  --accent-contrast: #ffffff; /* ボタンの文字 */
+  --gold: #c09e5c; /* 飾りの線 */
+  --border: #d3dae2;
+  --line: #e0e5ea;
+  --focus-ring: #98783d;
+
+  --radius: 10px; /* カード（ホームページと同じ） */
+  --shadow: 0 8px 24px rgba(2, 23, 47, 0.08);
+  --font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+
+  color-scheme: light dark;
+}
+
+/* ダークモード（端末の設定に合わせて自動で切り替え）。紺を背景にして、金を差し色にする */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #02172f;
+    --surface: #0a2945;
+    --text: #e9edf1;
+    --text-muted: #a8b4c2;
+    --heading: #f3f5f8;
+    --accent: #c09e5c;
+    --accent-soft: #0f3152;
+    --accent-contrast: #02172f;
+    --gold: #c09e5c;
+    --border: #24476b;
+    --line: #1a3a5c;
+    --focus-ring: #c09e5c;
+
+    --shadow: none;
+  }
+}
+
+/* ---------- 基本 ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+p,
+h1,
+h2,
+ul {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* 文の途中で折り返さず、意味のまとまりごとに改行する */
+.phrase {
+  display: inline-block;
+}
+
+/* ---------- 画面の枠 ---------- */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: max(28px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
+    max(16px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+}
+
+main {
+  flex: 1;
+}
+
+/* ---------- ロゴ＋COACHING-L ---------- */
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  flex: none;
+  width: 52px;
+  height: 52px;
+}
+
+.brand-name {
+  color: var(--heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+}
+
+.app-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.intro {
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+/* ---------- ツールの一覧 ---------- */
+
+.tool-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+/* カード全体を1つのリンクにして、どこを押しても開けるようにする */
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px 18px 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tool-card:active {
+  transform: scale(0.99);
+}
+
+@media (hover: hover) {
+  .tool-card:hover {
+    border-color: var(--border);
+    border-left-color: var(--gold);
+  }
+
+  .tool-card:hover .tool-arrow {
+    transform: translateX(3px);
+  }
+}
+
+.tool-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.tool-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tool-name {
+  color: var(--heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.tool-desc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.tool-arrow {
+  flex: none;
+  color: var(--accent);
+  font-size: 1.75rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.privacy-note {
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+/* ---------- ページが見つからないとき（404.html） ---------- */
+
+.not-found {
+  margin-top: 32px;
+  padding: 24px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.not-found-title {
+  color: var(--heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.not-found-text {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ---------- フッター ---------- */
+
+.app-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.footer-brand {
+  color: var(--heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.footer-note {
+  margin-top: 4px;
+  font-size: 0.8125rem;
+}
+
+/* ---------- 大きめの画面 ---------- */
+
+@media (min-width: 600px) {
+  .app {
+    padding-top: 56px;
+  }
+}
+
+/* ---------- 動きを減らす設定 ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card,
+  .tool-arrow {
+    transition: none !important;
+  }
+
+  .tool-card:active {
+    transform: none;
+  }
+}
