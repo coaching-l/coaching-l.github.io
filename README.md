@@ -13,6 +13,7 @@ GitHub 組織 `coaching-l` の GitHub Pages（組織のサイト）として公�
 | 人生の輪 | https://tools.coaching-l.net/the-wheel-of-life/ | [coaching-l/the-wheel-of-life](https://github.com/coaching-l/the-wheel-of-life) |
 | 内省の問いカード | https://tools.coaching-l.net/reflection-cards/ | [coaching-l/reflection-cards](https://github.com/coaching-l/reflection-cards) |
 | ポモドーロタイマー | https://tools.coaching-l.net/pomodoro/ | [coaching-l/pomodoro](https://github.com/coaching-l/pomodoro) |
+| 内的土壌ノート | https://tools.coaching-l.net/inner-ground-theory/ | [coaching-l/inner-ground-theory](https://github.com/coaching-l/inner-ground-theory) |
 
 ## 独自ドメインのしくみ
 
