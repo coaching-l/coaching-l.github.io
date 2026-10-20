@@ -14,6 +14,7 @@ GitHub 組織 `coaching-l` の GitHub Pages（組織のサイト）として公�
 | 内省の問いカード | https://tools.coaching-l.net/reflection-cards/ | [coaching-l/reflection-cards](https://github.com/coaching-l/reflection-cards) |
 | ポモドーロタイマー | https://tools.coaching-l.net/pomodoro/ | [coaching-l/pomodoro](https://github.com/coaching-l/pomodoro) |
 | 内的土壌ノート | https://tools.coaching-l.net/inner-ground-theory/ | [coaching-l/inner-ground-theory](https://github.com/coaching-l/inner-ground-theory) |
+| 人生のリソースの棚卸し | https://tools.coaching-l.net/resource-check/ | [coaching-l/resource-check](https://github.com/coaching-l/resource-check) |
 
 ## 独自ドメインのしくみ
 
